@@ -1,0 +1,25 @@
+What I learned:
+
+1. API - a program that takes in some data and gives back some other data after processing it.
+In Flask-RESTful that data is resources
+REST API is stateless - one request cannot depend on any other requests
+
+2. We don't need to use jsonify with Flask-RESTful - it does it for us. We just have to return dictionaries
+
+3. JWT (JSon Web Token) - creates a new endpoint /auth, when we call /auth we send it an username and password. 
+JWT extension sends that information to the authenticate function and then we get returned a jwt token(an user).
+@jwt-required decorator
+payload is the content of JWT token
+4. parser - to process received data (allowing only a part of the elements to pass trough json payload (f.e., when updating)
+5. filter function returns a filter object/ next - gives us the first item found by filter function
+6. GET (retrieve data)
+, POST (receive data and use it)
+, DELETE 
+, PUT (make sure that something is there/ create new item/ update it)
+7. api.add_resource to create endpoints
+8.
+200 - status OK
+404 - error not found
+400 - bad request
+201 - created
+9. safe_str_cmp - works on all python versions and systems, its safer to compare strings
