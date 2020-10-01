@@ -1,0 +1,18 @@
+What I learned:
+
+1. To structure a Flask application (seperate models from resources)
+2. In models:
+  db.Model - to define a model that is going into a database7
+  id = db.Column(db.Integer, primary_key=True) - describing columns in the table 
+  / this id describes a column name in sqlalchemy database so its ok to call it id
+  db.relationship(StoreModel) - many (f.x., items) to one (f.x., store) relationship
+  db.relationship('ItemModel', lazy='dynamic') -backreference - allows te store to see which items are in the items table
+  / lazy='dynamic' - whenever there is created a new store, the program automaticaly creates a new object for each item - lazy turns this off
+  db.session.add(self) - INSERT INTO
+  db.session.delete(self)
+  db.session.commit()
+  cls.query.filter_by(name=name).first() # SELECT * FROM items WHERE name=name LIMIT 1
+3. app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db' - says that the sqlalchemy database is at the root folder of our project / it doesnt have to be sqlite
+4. app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False - doesn't track every change made, SQLALCHEMy has its own modification tracker that is always used
+5. @app.before_first_request - will run the method before the first request in this app
+6. db.py
