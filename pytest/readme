@@ -1,0 +1,15 @@
+What I learned:
+
+1. TDD - Write test - test it - write a minimal application to pass the test - rinse and repeat
+2. assert
+3. setup functions/ modules/ methods / classes - snippets of code that run before the tests
+   termination functions/ methods / classes - snippets of code that run after the tests
+4. text fixtures - snippets of code that run before/after the tests just like setup/teardown methods
+   text fixtures allows for a ore individual combination between tests and snippets of code that go with them
+   Test fixtures scope - function/ class/ module / session
+   decorator : @pytest.fixture()
+   yield - the code after this line runs as a termination code
+   request.addfinalizer(teardown_a) # calls teardown_a (function) termination code
+5. floating point values are difficult to assert/compare thats why there is approx(0.3) function
+6. 'raises' statement - when we need to verify that a function throws an exception + 'with' keyword
+   
