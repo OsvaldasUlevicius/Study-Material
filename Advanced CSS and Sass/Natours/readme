@@ -24,3 +24,8 @@ What I learned:
   animation-timing-function:; - defines how fast or slow will the animations happen (at the start/end).
   animation-iteration-count:; - how many times will the animation happen - repeat.\
 13. backface-visibility: hidden; - removes the unwanted "shaking" effect from the animation.
+
+
+14. should always give the property display:inline-block; to elements if we give them paddings/heights/widths, so that they don't cover over other elements
+  inline-block is treated as a text so I can apply text-align:center; property to it.
+15. box-shadow: x y blur color;
