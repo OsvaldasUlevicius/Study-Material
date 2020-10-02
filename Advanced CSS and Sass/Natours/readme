@@ -29,3 +29,9 @@ What I learned:
 14. should always give the property display:inline-block; to elements if we give them paddings/heights/widths, so that they don't cover over other elements
   inline-block is treated as a text so I can apply text-align:center; property to it.
 15. box-shadow: x y blur color;
+
+16. ::after selector;
+17. z-index:; - defines the position of elements if they are on top of one another.
+18. transform: scale(); - increases the element.
+19. animation-fill-mode: backwards; - automatically applies the animation styles to the element before the animation starts */
+
