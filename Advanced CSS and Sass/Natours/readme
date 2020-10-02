@@ -1,0 +1,9 @@
+What I learned:
+
+1. Instead of normalize.css now I can use simple reset (margin:0;padding:0;box-sizing: border-box) to make sure that the website looks nice across different browsers.
+2. box-sizing: border-box; - changes the box model so that the borders and the paddings are no longer added to the total width/height of the box.
+3. vh (f.x., 95vh) - sets it that at any size of the screen the height/widht of an element should be 95% of the viewport.
+4. linear-gradient.
+5. background-size: cover; - tries to fit the element (img) inside of a box (container of the size 95vh).
+6. background-position: top; - ensures that not depending on the screen size, the top of the image stays at the top of the container.
+7. clip-path: polygon(x y, x y, x y, x y) - defines the form of the container. https://bennettfeely.com/clippy/ 
