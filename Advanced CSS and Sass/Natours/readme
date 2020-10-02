@@ -15,3 +15,12 @@ What I learned:
   Absolute and top/left properties set that the elements position will begin at those marks(50% and 50%) and the transform:translate property will shifts the elements center to 
   those marks.
 10. display: block; - block elements occupy the entire width that they have available and create line breaks after and before them.
+
+
+
+11. Creating custom CSS animations using @keyframes
+  Best to use with opacity and transfer (the browsers handle these properties the best)
+12. Using animation properties (animation-name:; animation-duration:;animation-timing-function:;animation-delay:;animation-iteration-count:;)
+  animation-timing-function:; - defines how fast or slow will the animations happen (at the start/end).
+  animation-iteration-count:; - how many times will the animation happen - repeat.\
+13. backface-visibility: hidden; - removes the unwanted "shaking" effect from the animation.
