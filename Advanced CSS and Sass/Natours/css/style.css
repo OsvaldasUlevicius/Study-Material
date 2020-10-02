@@ -1,9 +1,11 @@
-/* COLORS:
+/* COLORS---------------------------------------------------------------------------------------------------------------------------------------------------
 
 Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
 */
+
+/* BASIC SETUP--------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* Simple reset so it looks nice across browsers (before there was normalize.css and now theres this method: */
 * {
@@ -22,6 +24,8 @@ body {
     padding: 30px;
 }
 
+/* HEADER --------------------------------------------------------------------------------------------------------------------------------------------------- */
+
 .header {
     height: 95vh; /* at any point the height of this box should be 95% of viewport height */
     background-image: linear-gradient(
@@ -32,5 +36,43 @@ body {
         /* basicly we have 2 background images: linear gradient going from light green to dark and then the other - image */
     background-size: cover; /* cover - tries to fit the element (img) inside of the box (header: 95vh) */
     background-position: top; /* ensures that not depending on the browser-screen size, the top of the image stays at the top of the container */
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* defining the points where the header(image) is - 3 points stay the same and the bottom right changes
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* defining the points where the header(image) is - 3 points stay the same and the bottom right changes*/
+    position: relative;
+}
+
+.logo-box {
+    position: absolute; /* the container(header) has to be relative */
+    top: 40px;
+    left: 40px;;
+}
+
+.logo {
+    height: 35px;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* aboslute top 50% and left 50% make it so that the text box BEGINS at the 50% mark of the container and transform translate makes it that the center of the text-box begins at the 50% mark (the very center) */
+    /* -50% are in relation not to the parent element but to the element itself, the element will be shifted half of its width and height to the left side and to the top */
+}
+
+.heading-primary {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main {
+    display: block; /* block elements occupy the entire width that they have available and create line breaks after and before them */
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+    display:block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
 }
