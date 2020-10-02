@@ -7,3 +7,11 @@ What I learned:
 5. background-size: cover; - tries to fit the element (img) inside of a box (container of the size 95vh).
 6. background-position: top; - ensures that not depending on the screen size, the top of the image stays at the top of the container.
 7. clip-path: polygon(x y, x y, x y, x y) - defines the form of the container. https://bennettfeely.com/clippy/ 
+
+
+
+8. Postioning elements in containers: set the container position: relative; then set the element position:absolute; and specify top:y px; and left:x px;.
+9. Centering element in containers: set the elements position:absolute; define top:50%; and left:50%; and then use tranform: translate(-50%; -50%).
+  Absolute and top/left properties set that the elements position will begin at those marks(50% and 50%) and the transform:translate property will shifts the elements center to 
+  those marks.
+10. display: block; - block elements occupy the entire width that they have available and create line breaks after and before them.
