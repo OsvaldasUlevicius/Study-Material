@@ -61,6 +61,8 @@ body {
 .heading-primary {
     color: #ffffff;
     text-transform: uppercase;
+
+    backface-visibility: hidden; /* removes the unwanted "shaking" effect from the animation */
 }
 
 .heading-primary-main {
@@ -68,6 +70,14 @@ body {
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; /* how fast or how slow will happen the animations parametes (0% 80% 100%) ease-out - begins faster and it becomes slower by the end */
+    /*
+    animation-delay: 3s;
+    animation-iteration-count: 3; /* how many times should the animation happen
+    */
 }
 
 .heading-primary-sub {
@@ -75,4 +85,40 @@ body {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+
+    animation: moveInRight 1s ease-out;
+}
+
+/* ANIMATIONS ----------------------------- */
+/* best to use with opacity and transfer - the browsers handle these best */
+@keyframes moveInLeft {
+    /* 0% before the animation starts
+    100% when the animation finishes */
+    0% {
+        opacity: 0; /* invisible */
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(10px); /* goes 20px to the right of the final position */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    /* 0% before the animation starts
+    100% when the animation finishes */
+    0% {
+        opacity: 0; /* invisible */
+        transform: translateX(100px);
+    }
+    80% {
+        transform: translateX(-10px); /* goes 20px to the right of the final position */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
