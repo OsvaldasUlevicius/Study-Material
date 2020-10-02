@@ -6,3 +6,5 @@ Things I'm learning on my own during my free time:
   WSGI -  simple calling convention for web servers to forward requests to web applications or frameworks
 - SQLAlchemy
 - Pytest
+- Django
+- Advanced CSS and Sass
