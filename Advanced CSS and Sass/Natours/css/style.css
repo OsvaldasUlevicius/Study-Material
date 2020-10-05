@@ -8,20 +8,70 @@ Dark green: #28b485
 /* BASIC SETUP--------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* Simple reset so it looks nice across browsers (before there was normalize.css and now theres this method: */
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* changes the box model so that the borders and the paddings are no longer added to the total width / height of the box */
+    box-sizing: inherit; /* allows for all of the elements to inherit box sizing property */
+}
+
+html {
+    font-size: 62.5%; /* sets the default font size to 62.5% of the one specified by the user or the browser default(16px) */
 }
 
 /* setting project-wide font definitions for the project to inherit */
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
+    box-sizing: border-box; /* changes the box model so that the borders and the paddings are no longer added to the total width / height of the box */
+}
+
+
+/* ANIMATIONS ----------------------------- */
+/* best to use with opacity and transfer - the browsers handle these best */
+@keyframes moveInLeft {
+    /* 0% before the animation starts
+    100% when the animation finishes */
+    0% {
+        opacity: 0; /* invisible */
+        transform: translateX(-10rem);
+    }
+    80% {
+        transform: translateX(1rem); /* goes 20px to the right of the final position */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80% {
+        transform: translateX(--1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
 
 /* HEADER --------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -42,12 +92,12 @@ body {
 
 .logo-box {
     position: absolute; /* the container(header) has to be relative */
-    top: 40px;
-    left: 40px;;
+    top: 4rem;
+    left: 4rem;;
 }
 
 .logo {
-    height: 35px;
+    height: 3.5rem;
 }
 
 .text-box {
@@ -56,6 +106,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);  /* aboslute top 50% and left 50% make it so that the text box BEGINS at the 50% mark of the container and transform translate makes it that the center of the text-box begins at the 50% mark (the very center) */
     /* -50% are in relation not to the parent element but to the element itself, the element will be shifted half of its width and height to the left side and to the top */
+    text-align: center;
 }
 
 .heading-primary {
@@ -63,13 +114,14 @@ body {
     text-transform: uppercase;
 
     backface-visibility: hidden; /* removes the unwanted "shaking" effect from the animation */
+    margin-bottom: 6rem;
 }
 
 .heading-primary-main {
     display: block; /* block elements occupy the entire width that they have available and create line breaks after and before them */
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -82,43 +134,66 @@ body {
 
 .heading-primary-sub {
     display:block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.75rem;
 
     animation: moveInRight 1s ease-out;
 }
 
-/* ANIMATIONS ----------------------------- */
-/* best to use with opacity and transfer - the browsers handle these best */
-@keyframes moveInLeft {
-    /* 0% before the animation starts
-    100% when the animation finishes */
-    0% {
-        opacity: 0; /* invisible */
-        transform: translateX(-100px);
-    }
-    80% {
-        transform: translateX(10px); /* goes 20px to the right of the final position */
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+/* BUTTONS --------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block; /* should always do this if we want to give paddings/heights widths to elements */
+    /* inline block is treated as text so its enough to say text-align:center; in the container */
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
 }
 
-@keyframes moveInRight {
-    /* 0% before the animation starts
-    100% when the animation finishes */
-    0% {
-        opacity: 0; /* invisible */
-        transform: translateX(100px);
-    }
-    80% {
-        transform: translateX(-10px); /* goes 20px to the right of the final position */
-    }
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2); /* adds 0 shadow in the x axis and 5px shadow to the y axis and 10px blur and rgba color of the shadow with opacity*/
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2s);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.btn::after {
+    content: ""; /* content and display here are always necessary */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* defines the position of elements if they are on top of one another */
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6); /* increases the element */
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInUp .5s ease-out .75s; /* the last point is animation delay */
+    animation-fill-mode: backwards; /* automatically applies the animation styles (opacity and transform) to the element before the animation starts */
 }
