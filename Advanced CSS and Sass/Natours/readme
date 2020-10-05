@@ -57,3 +57,9 @@ What I learned:
                                 or elements (we can even overlap them)/ we use top/bottom/left/right to offset the element from its relatively positioned container
 
 26. Stacking contexts: z-index: x; the higher z index appears higher on the top;
+
+
+Sass:
+27. Variables ($color-primary: #fff; $color-primary
+28. nesting and "&" with pseudo-classes
+29.
