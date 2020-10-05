@@ -61,5 +61,5 @@ What I learned:
 
 Sass:
 27. Variables ($color-primary: #fff; $color-primary
-28. nesting and "&" with pseudo-classes
-29.
+28. Nesting and "&" with pseudo-classes
+29. Functions: darken(); lighten();
