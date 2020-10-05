@@ -40,3 +40,20 @@ What I learned:
 21. Converting all the px units to rem (relative to 62.5% of the default (16px)). Makes it easier to make the website responsive.
 22. inherit keyword - made box-sizing be inheritable. Not all properties are inheritable. Properties related to font are inheritabl.e
 23. Rems and ems.
+
+
+24. Box types:
+  display:block; - will always occupy as much space as possible (100% of its parent's width) and create line breaks after and before it 
+                  (meaning that the blocks are formated verticaly one after another(), box-model applies to them (margin/padding...etc.)
+  display: inline; - content is dirtributed in lines, occupies the space that its content actually needs (and no more), 
+                  no line-breaks, the height and with properties do not apply and we can only specify horizontal paddings and margins only
+  display: inline-block; - occupies the space that its content actually needs (and no more), no line-breaks, box-model applies to them (margin/padding...etc.)
+
+25. Positioning schemes:
+  position: relative; - normal flow - default positioning shceme, not floated, not absolutely positioned, elements laid out according to their source order
+  float: left; / float: right; - element is removed from the normal flow and is shifted to the left or right as much as possible,
+                          text and inline elements will wrap around the floated element, the container will not adjust its height to the element (we use clearfix to fix that)
+  position: absolute; position: fixed; - absolute positioning - element is removed from the normal flow the element has no impact on surrounding content
+                                or elements (we can even overlap them)/ we use top/bottom/left/right to offset the element from its relatively positioned container
+
+26. Stacking contexts: z-index: x; the higher z index appears higher on the top;
