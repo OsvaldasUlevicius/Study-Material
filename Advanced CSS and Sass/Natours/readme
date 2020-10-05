@@ -35,3 +35,8 @@ What I learned:
 18. transform: scale(); - increases the element.
 19. animation-fill-mode: backwards; - automatically applies the animation styles to the element before the animation starts */
 
+
+20. Adding html tag to the CSS file and defining font-size in %.
+21. Converting all the px units to rem (relative to 62.5% of the default (16px)). Makes it easier to make the website responsive.
+22. inherit keyword - made box-sizing be inheritable. Not all properties are inheritable. Properties related to font are inheritabl.e
+23. Rems and ems.
