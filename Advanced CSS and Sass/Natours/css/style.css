@@ -7,6 +7,22 @@ Dark green: #28b485
 
 /* BASIC SETUP--------------------------------------------------------------------------------------------------------------------------------------------------- */
 
+/*
+Box types:
+display:block; - will always occupy as much space as possible (100% of its parent's width) and create line breaks after and before it (meaning that the blocks are formated verticaly one after another(), box-model applies to them (margin/padding...etc.)
+display: inline; - content is dirtributed in lines, occupies the space that its content actually needs (and no more), no line-breaks, the height and with properties do not apply and we can only specify horizontal paddings and margins only
+display: inline-block; - occupies the space that its content actually needs (and no more), no line-breaks, box-model applies to them (margin/padding...etc.)
+
+positioning schemes:
+position: relative; - normal flow - default positioning shceme/ not floated, not absolutely positiones/ elements laid out according to their source order
+float: left; / float: right; - element is removed from the normal flow and is shifted to the left or right as much as possible; text and inline elements will wrap around the floated element, the container will not adjust its height to the 
+element (we use clearfix to fix that)
+position: absolute; position: fixed; - absolute positioning - element is removed from the normal flow/ the element has no impact on surrounding content or elements (we can even overlap them)/ we use top/bottom/left/right to offset the element from its relatively positioned container
+
+stacking contexts
+z-index: x; the higher z index appears higher on the top;
+*/
+
 /* Simple reset so it looks nice across browsers (before there was normalize.css and now theres this method: */
 *,
 *::after,
@@ -55,7 +71,7 @@ body {
         transform: translateX(10rem);
     }
     80% {
-        transform: translateX(--1rem);
+        transform: translateX(-1rem);
     }
     100% {
         opacity: 1;
@@ -90,17 +106,17 @@ body {
     position: relative;
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute; /* the container(header) has to be relative */
     top: 4rem;
     left: 4rem;;
 }
 
-.logo {
+.header__logo {
     height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -117,7 +133,7 @@ body {
     margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block; /* block elements occupy the entire width that they have available and create line breaks after and before them */
     font-size: 6rem;
     font-weight: 400;
@@ -132,8 +148,8 @@ body {
     */
 }
 
-.heading-primary-sub {
-    display:block;
+.heading-primary--sub {
+    display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
@@ -166,7 +182,7 @@ body {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.2s);
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
@@ -184,7 +200,7 @@ body {
     transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
@@ -193,7 +209,7 @@ body {
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInUp .5s ease-out .75s; /* the last point is animation delay */
     animation-fill-mode: backwards; /* automatically applies the animation styles (opacity and transform) to the element before the animation starts */
 }
