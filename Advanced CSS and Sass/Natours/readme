@@ -69,5 +69,8 @@ Sass:
 33. Sass functions
 
 NPM Packages:
-34. npm init - to create package.jso file
+34. npm init - to create package.json file
 35. npm install node-sass --save-dev
+
+36. npm run compile:sass - runs the script in the package.json file ("compile:sass": "node-sass sass/main.scss css/style2.css -w") - converts the main.scss file into
+css file that the .html file links to. -w makes it so as long as this command is run, the conversion will happen automaticaly with each save of the scss file.
