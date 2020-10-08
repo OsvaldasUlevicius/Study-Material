@@ -1,0 +1,56 @@
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block; /* should always do this if we want to give paddings/heights widths to elements */
+        /* inline block is treated as text so its enough to say text-align:center; in the container */
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        font-size: 1.6rem;
+    }
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black,.2); /* adds 0 shadow in the x axis and 5px shadow to the y axis and 10px blur and rgba color of the shadow with opacity*/
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6); /* increases the element */
+            opacity: 0;
+        }
+    }
+    
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2s);
+    }
+    
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    
+    &::after {
+        content: ""; /* content and display here are always necessary */
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1; /* defines the position of elements if they are on top of one another */
+        transition: all .4s;
+    }
+    
+    &--animated {
+        animation: moveInUp .5s ease-out .75s; /* the last point is animation delay */
+        animation-fill-mode: backwards; /* automatically applies the animation styles (opacity and transform) to the element before the animation starts */
+    }
+}
