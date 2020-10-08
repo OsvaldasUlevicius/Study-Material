@@ -76,3 +76,14 @@ NPM Packages:
 css file that the .html file links to. -w makes it so as long as this command is run, the conversion will happen automaticaly with each save of the scss file.
 37. npm install live-server -g - installs the package globally
 38. live-server - run this in the root directory of the project to host it on localhost (therefore the site will update immediately when I save any changes)
+
+
+
+39. 7-1 CSS Architecture:
+  Structure Sass folder with these sub-folders and files:
+    abstracts (_functions.scss, _mixins.scss, _variables.scss)
+    base (_animations.scss, _base.scss (low level basics - resets, styles for html and body selectors), _typography.scss, _utilities.scss)
+    components (f.e., _button.scss)
+    layout (f.e., _header.scss)
+    pages (_home.scss)
+    main.scss - used to import all of the above files
