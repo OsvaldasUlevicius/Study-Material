@@ -1,0 +1,53 @@
+.row {
+    max-width: $grid-width; // if the viewport is smaller than 114 rem then max width will fill the 100% of the space that it has
+    background-color: #eee;
+    margin: 0 auto; // to center block elements inside of other block elements
+
+    // not pseudo class in this isntance selects everything but the last child
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+    
+    @include clearfix;
+
+    // ^ Selects all classes beginning with col- // $ - ends with col // ** contains col
+    [class^="col-"] {
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+
+    .col-1-of-2 {
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+        background-color: orangered;
+    }
+
+    .col-1-of-3 {
+        width: calc((100% - #{$gutter-horizontal} * 2) / 3);
+        background-color: green;
+    }
+
+    .col-2-of-3 {
+        width: calc((100% - #{$gutter-horizontal} * 2) / 3 * 2 + #{$gutter-horizontal});
+        background-color: yellow;
+    }
+
+    .col-1-of-4 {
+        width: calc((100% - #{$gutter-horizontal} * 3) / 4);
+        background-color: blue;
+    }
+
+    .col-2-of-4 {
+        width: calc((100% - #{$gutter-horizontal} * 3) / 4 * 2 + #{$gutter-horizontal});
+        background-color: orange;
+    }
+
+    .col-3-of-4 {
+        width: calc((100% - #{$gutter-horizontal} * 3) / 4 * 3 + #{$gutter-horizontal} * 2);
+        background-color: gray;
+    }
+
+}
+
