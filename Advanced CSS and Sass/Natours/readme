@@ -87,3 +87,5 @@ css file that the .html file links to. -w makes it so as long as this command is
     layout (f.e., _header.scss)
     pages (_home.scss)
     main.scss - used to import all of the above files
+ 
+ 40. Creating custom grids with floats
