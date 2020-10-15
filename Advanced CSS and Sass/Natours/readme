@@ -89,3 +89,6 @@ css file that the .html file links to. -w makes it so as long as this command is
     main.scss - used to import all of the above files
  
  40. Creating custom grids with floats
+
+
+ 41. outline: 1.5rem solid back; - is similar to border, but we can also use outline-offset (creates a padding-like effect between the outline and the image);
