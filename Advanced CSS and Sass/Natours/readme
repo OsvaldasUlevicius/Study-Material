@@ -92,3 +92,4 @@ css file that the .html file links to. -w makes it so as long as this command is
 
 
  41. outline: 1.5rem solid back; - is similar to border, but we can also use outline-offset (creates a padding-like effect between the outline and the image);
+ 42. transform: skew(xdeg);
